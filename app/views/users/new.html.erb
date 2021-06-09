@@ -1,2 +1,52 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<section class="login-back">
+  <div class=" mx-auto signup">
+   <div class="row">
+      <div class="col-md-6 p-0">
+        <div class="twitter-image">
+        </div>
+      </div>
+      <div class="col-md-6 signin-back d-flex align-items-center justify-content-center">
+        <div>
+          <div class="text-center my-5">
+            <p class="c-twitter">
+              <i class="fas fa-laugh fs-1"> </i>
+            </p>
+            <p class="c-nav-items fs-4">
+              Sign up!
+            </p>
+          </div>
+          <div>
+            <%= form_for @user do |user| %>
+              <% if flash[:error_messages] %>
+                <div class="alert alert-danger text-danger m-0 text-center px-5">
+                  <% flash[:error_messages].each do |errormessage| %>
+                    <%= errormessage %>
+                    <br>
+                  <% end %>
+                </div>
+              <% end %>
+              <div class="">
+                <div class="input-group my-5">
+                  <span class="input-group-text"><i class="fas fa-user text-white"> </i></span>
+                  <%= user.text_field :username, placeholder:"Username", class:"form-control bg-white", id:"username" %>
+                </div>
+                <div class="input-group my-5">
+                  <span class="input-group-text"><i class="fas fa-pen text-white"> </i></span>
+                  <%= user.text_field :fullname, placeholder:"Fullname", class:"form-control bg-white", id:"fullname" %>
+                </div>
+                <div class="form-group text-center mt-5">
+                  <span class="fs-6"> 
+                    Already have an account? <%= link_to "Login", login_path, class:' ms-1 text-decoration-none' %>
+                  </span>
+                </div>
+                <div class="d-grid gap-2 mt-2 mb-5">
+                  <%= user.submit "Sign up", class:'btn text-white fs-5', id:"signup" %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

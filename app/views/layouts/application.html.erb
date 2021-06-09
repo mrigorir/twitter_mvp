@@ -17,7 +17,9 @@
 
   <body class="body">
     <div class="container-fluid">
-      <%= render 'shared/sidebar' %>
+      <div class="row">
+        <%= yield  %>
+      </div>
     </div>
      <script>
       var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))

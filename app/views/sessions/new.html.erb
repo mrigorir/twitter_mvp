@@ -1,4 +1,45 @@
-<div data-role="logup">
-  <h1>Sessions#new</h1> 
-  <p>Find me in app/views/sessions/new.html.erb</p>
-</div>
+<section class="login-back">
+  <div class=" mx-auto signup">
+   <div class="row">
+      <div class="col-md-6 p-0">
+        <div class="twitter-image">
+        </div>
+      </div>
+      <div class="col-md-6 signin-back d-flex align-items-center justify-content-center">
+        <div>
+          <div class="text-center my-5">
+            <p class="c-twitter">
+              <i class="fas fa-laugh fs-1"> </i>
+            </p>
+            <p class="c-nav-items fs-4">
+              Login to your account
+            </p>
+          </div>
+          <div>
+            <%= form_for :session, url:login_path do |f| %>
+              <% if alert %>
+                <div class="alert alert-danger text-danger m-0 text-center">
+                  <%= flash[:alert] %>
+                </div>
+              <% end %>
+              <div class="">
+                <div class="input-group my-5">
+                  <span class="input-group-text"><i class="fas fa-user text-white"> </i></span>
+                  <%= f.text_field :username, placeholder:"Username", class:"form-control bg-white", id:"username" %>
+                </div>
+                <div class="form-group text-center mt-5">
+                  <span class="fs-6"> 
+                    Dont have an account? <%= link_to "Sign up", signup_path, class:' ms-1 text-decoration-none' %>
+                  </span>
+                </div>
+                <div class="d-grid gap-2 mt-2 mb-5">
+                  <%= f.submit "Login", class:'btn text-white fs-5', id:"login" %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
