@@ -4,7 +4,7 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.string :username
       t.string :fullname
       t.string :photo
-      t.sting :coverImage
+      t.string :coverImage
 
       t.timestamps
     end

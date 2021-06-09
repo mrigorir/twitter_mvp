@@ -1,0 +1,63 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+$body-color: #f0f1f1;
+$c-letter-sidebar: #62778A;
+$bg-twitter: #53a7e7;
+$c-nav-items: #337ab7;
+
+.back-username {
+  background-color: #1b2a3d;
+}
+
+.back-sidebar {
+  background-color: #213246
+}
+
+.body {
+  font-family: "Poppins", sans-serif;
+  background-color: $body-color;
+}
+
+.c-letter-sidebar {
+  color: $c-letter-sidebar
+}
+
+.border-black {
+  border-bottom: solid 2px #172531;
+}
+
+.border-right-divisor {
+  border-right: solid 2px #172531;
+}
+
+.bg-twitter {
+  background-color: $bg-twitter;
+}
+
+@media only screen and (max-width : 1024px) {
+  li.nav-item {
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+
+  .divisor {
+    border-bottom: solid 2px $c-nav-items;
+    width: 60%;
+    margin: 0 auto;
+  }
+}
