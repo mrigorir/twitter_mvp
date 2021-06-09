@@ -27,6 +27,10 @@ $signin-background: #f3f4f7;
   background-color: $bg-twitter;
 }
 
+div.col-md-12 {
+  padding: 0;
+}
+
 //Sidebar
 
 .back-username {
@@ -107,6 +111,12 @@ span.input-group-text {
   width: 60%;
 }
 
+//edit profile
+
+.mt-8 {
+  margin-top: 80px;
+}
+
 
 
 
@@ -142,6 +152,7 @@ span.input-group-text {
 //Queries
 
 @media only screen and (max-width : 1024px) {
+  
   li.nav-item {
     text-align: center;
     padding-bottom: 10px;
@@ -154,4 +165,14 @@ span.input-group-text {
     margin: 0 auto;
   }
 
+  .edit-profile {
+    margin-top: 0;
+  }
+
+}
+
+@media only screen and (min-width : 1024px) {
+  .sidebar {
+    height: 98vh;
+  }
 }

@@ -1,11 +1,11 @@
-<div class="col-md-2 p-0 bg-opinions">
+<div class="col-md-2 p-0 bg-opinions sidebar">
   <div class="d-flex flex-column flex-shrink-0 text-white h-100 back-sidebar">
     <div class="d-flex aling-items-center border-black back-username">
       <img src="assets/images/squared_foto.jpg" class="img-fluid mt-4 ms-4" width="100" height="50" />
       <span class="mt-4 ms-3" style="color: #62778A;"> Mrigorir <span>
     </div>
     <div class="d-flex align-items-center justify-content-center border-dark back-username py-2 mb-4">
-      <div class="flex-column d-flex text-center border-right-divisor pe-5">
+      <div class="flex-column d-flex text-center border-right-divisor pe-4">
         <span class="text-white"> 
         2 
         </span> 
@@ -13,7 +13,7 @@
         Following
         </span>
       </div>
-        <div class="flex-column d-flex text-center ps-5">
+        <div class="flex-column d-flex text-center ps-4">
         <span class="text-white"> 
         1 
         </span> 
@@ -40,7 +40,7 @@
   </div>
 </div>
 <div class="col-md-10 p-0">
-  <nav class="navbar navbar-expand-lg navbar-light bg-twitter">
+  <nav class="navbar navbar-expand-lg navbar-light bg-twitter" style="padding: 12px;">
     <div class="container-fluid">
       <%= link_to home_path, class: 'navbar-brand' do %>
         <i class="fa fa-twitter text-white fs-1"> </i>
@@ -51,7 +51,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item me-3" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit profile">
-            <%= link_to home_path, class:'nav-link', style: 'color: #337ab7' do %>
+            <%= link_to edit_user_path(current_user.id), class:'nav-link', style: 'color: #337ab7' do %>
               <i class="fas fa-pen fs-3"></i>
             <% end %> 
           </li>
@@ -75,7 +75,7 @@
           </li>
           <div class="divisor"> </div>
           <li class="nav-item me-3" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Logout">
-            <%= link_to home_path, class:'nav-link', style: 'color: #337ab7' do %>
+            <%= link_to logout_path, class:'nav-link', style: 'color: #337ab7', method: :delete do %>
               <i class="fas fa-sign-out-alt fs-3"></i>
             <% end %> 
           </li>
