@@ -12,7 +12,7 @@ class User < ApplicationRecord
   has_many :user_followings, through: :followings, source: :following
 
   def not_following
-    User.all.where.not(id: user_followings.select(:id)).where.not(id: id).ordered_by_most_recent
+    User.all.where.not(id: user_followings.select(:id)).where.not(id: id).order(created_at: :desc)
   end
 
   def follow_user(user_id)

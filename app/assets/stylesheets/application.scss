@@ -23,12 +23,59 @@ $c-nav-items: #337ab7;
 $login-border: #bebfc1;
 $signin-background: #f3f4f7;
 
+//general
+
+body {
+  overflow-x: hidden;
+}
+
 .btn-primary {
   background-color: $bg-twitter;
 }
 
 div.col-md-12 {
   padding: 0;
+}
+
+.w-80 {
+  width: 90%; 
+}
+
+.c-twitter {
+  color: $bg-twitter;
+}
+
+.c-feed {
+  color: #ccc;
+}
+
+.border-gray {
+  border-bottom: solid 2px #ccc;
+}
+
+.border-topp {
+  border-top: solid 2px #ccc;
+}
+
+.border-gray-centered {
+  width:90%;
+  margin: 0 auto;
+}
+
+.font-weight-bold {
+  font-weight: bold;
+}
+
+.body {
+  font-family: "Poppins", sans-serif;
+}
+
+.fs-6 {
+  font-size: 18px;
+}
+
+.fs-7 {
+  font-size: 15px;
 }
 
 //Sidebar
@@ -39,10 +86,6 @@ div.col-md-12 {
 
 .back-sidebar {
   background-color: #213246
-}
-
-.body {
-  font-family: "Poppins", sans-serif;
 }
 
 .bg-opinions {
@@ -77,6 +120,18 @@ div.col-md-12 {
   background-color: $signin-background;
 }
 
+.link-hover .nav-link {
+  color: $c-letter-sidebar;
+}
+
+.link-hover:hover {
+  background-color: $bg-twitter;
+}
+
+.link-hover:hover .nav-link {
+  color:white;
+}
+
 //Login
 
 .login-back {
@@ -94,7 +149,7 @@ div.col-md-12 {
   height: 550px;
 }
 
-.btn {
+.boton {
   justify-self: center;
   background-color: $bg-twitter !important;
   border-radius: 0;
@@ -113,15 +168,32 @@ span.input-group-text {
 
 //edit profile
 
-.mt-8 {
-  margin-top: 80px;
+.mb-10 {
+  margin-bottom: 120px;
 }
 
+.mt-10 {
+  margin-top: 100px;
+}
 
+//feed
 
+nav.nav .nav-link {
+  float: left;
+  display: block;
+  padding: 25px 35px;
+  border-bottom: 3px solid transparent;
+}
 
+nav.nav .nav-link.active {
+  border-bottom: 3px solid #53a7e7;
+}
 
+//who to follow
 
+.border-left {
+  border-left: solid 1px #ccc;
+}
 
 
 
@@ -169,10 +241,16 @@ span.input-group-text {
     margin-top: 0;
   }
 
+  .center-userdata {
+    justify-content: center;
+  }
+
 }
 
 @media only screen and (min-width : 1024px) {
   .sidebar {
-    height: 98vh;
+    z-index: 10;
+    overflow-y: auto;
+    clear: both;
   }
 }

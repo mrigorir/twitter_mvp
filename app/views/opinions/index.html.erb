@@ -1,2 +1,85 @@
-<h1>Opinions#index</h1>
-<p>Find me in app/views/opinions/index.html.erb</p>
+<section class="bg-opinions">
+  <div class="row">
+    <div class="col-md-9 p-0">
+
+      <nav class="nav bg-light border-gray"> 
+        <li class="nav-item ps-4"> 
+          <%= link_to "Tweets", root_path, class: "nav-link text-uppercase active", style: 'color: #62778A; font-weight: bold;' %> 
+        </li>
+        <li class="nav-item"> 
+          <%= link_to "Photos", root_path, class: "nav-link text-uppercase", style: 'color: #62778A;' %> 
+        </li>
+        <li class="nav-item"> 
+          <%= link_to "Videos", root_path, class: "nav-link text-uppercase", style: 'color: #62778A;' %> 
+        </li>
+      </nav>
+
+      <main class="mx-auto w-80">
+        <div class="card bg-white rounded-5 my-5">
+          <div class="card-body">
+            <h5 class="card-title text-uppercase c-letter-sidebar p-3"> Tweet Something </h5>
+            <%= form_for @opinion do |opinion| %>
+              <div class="form-group px-3">
+                <%= opinion.text_area :text, placeholder: 'Compose your tweet...', class:"form-control", id:"text" %>
+              </div>
+              <div class="form-group d-flex align-items-center justify-content-center mt-3">
+                <%= opinion.submit "Tweet it!", class: "btn btn-primary fs-6" %>
+              </div>
+            <% end %>
+         </div>
+        </div>
+        <div class="card bg-white rounded-5 my-5">
+          <div class="card-body">
+            <h5 class="card-title text-uppercase c-twitter p-3 border-gray font-weight-bold"> 4 new tweets </h5>
+             <% Opinion.newsfeed_opinions.each do |opinions| %>
+            <div class="d-flex mt-5">
+              <%= image_tag 'squared_foto.jpg', class: 'img-fluid rounded', width: '80' %>
+              <div class="d-flex flex-column flex-star ms-3">
+                <h6 class="text-dark fs-6 font-weight-bold">
+                  <%= link_to opinions.author.fullname, user_path(opinions.author.id), class: 'text-decoration-none text-dark' %>
+                </h6>
+                <p class="c-feed fs-7">
+                  <%= opinions.text %>
+                </p>
+              </div>
+            </div>
+              <% end %>
+            <div class="d-flex align-items-center justify-content-center mt-5">
+              <%= link_to 'View more', root_path, class: 'text-uppercase text-decoration-none font-weight-bold' %>
+            </div>
+         </div>
+        </div>
+      </main>
+    </div>
+    <div class="col-md-3 border-left px-3">
+      <div class="d-flex aling-items-center justify-content-between border-gray border-gray-centered py-4">
+        <h3 class="text-uppercase c-letter-sidebar fs-6"> Who to Follow </h3>
+        <i class="fas fa-sync-alt c-letter-sidebar me-4"> </i>
+      </div>
+      <% current_user.not_following.each do |f| %>
+      <div class="d-flex align-items-center mt-4 ms-4">
+        <%= image_tag 'squared_foto.jpg', class: 'img-fluid rounded-circle', width: '60' %>
+        <div class="d-flex flex-column flex-star ms-3 mt-3">
+          <h6 class="text-dark fs-7 font-weight-bold"> <%= link_to f.fullname, user_path(f.id), class: 'text-decoration-none c-letter-sidebar' %> </h6>
+          <p class="c-letter-sidebar fs-7"> <%= f.username %> </p>
+        </div>
+      </div> 
+      <% end %>
+      <div class="d-flex align-items-center mt-3 ms-4">
+        <%= link_to 'Popular account', home_path, class: 'text-decoration-none c-twitter fs-7' %>
+        <%= link_to 'Find friends', home_path, class: 'text-decoration-none c-twitter fs-7 ms-3' %> 
+      </div>
+       <div class="d-flex aling-items-center justify-content-between border-gray border-gray-centered border-topp pb-3 pt-4 mt-5">
+        <h3 class="text-uppercase c-letter-sidebar fs-6"> Trending </h3>
+        <i class="fas fa-cog c-letter-sidebar me-4"> </i>
+      </div>
+      <ul class="list-unstyled mt-3 ps-3">
+        <li class="mb-3"> <%= link_to '#onearmy', home_path, class: 'text-decoration-none c-letter-sidebar fs-7 ms-3' %> </li>
+        <li class="mb-3"> <%= link_to '#loremipsundolorsitamet', home_path, class: 'text-decoration-none c-letter-sidebar fs-7 ms-3' %> </li>
+        <li class="mb-3"> <%= link_to '#crispaloalargenico', home_path, class: 'text-decoration-none c-letter-sidebar fs-7 ms-3' %> </li>
+        <li class="mb-3"> <%= link_to '#Knockara Beau', home_path, class: 'text-decoration-none c-letter-sidebar fs-7 ms-3' %> </li>
+        <li> <%= link_to '#tributoalpasado', home_path, class: 'text-decoration-none c-letter-sidebar fs-7 ms-3' %> </li>
+      </ul>
+    </div>
+  </div>
+</section>

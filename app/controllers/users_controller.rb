@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :require_logout, only: %i[new create]
+  before_action :require_login, only: %i[show edit update]
   before_action :set_user, only: [:show, :edit, :update]
   
   def new
@@ -34,7 +34,6 @@ class UsersController < ApplicationController
     redirect_to login_path unless current_user
   end
 
-  
   private
 
   def set_user
