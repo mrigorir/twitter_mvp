@@ -2,23 +2,23 @@
   <div class="d-flex flex-column flex-shrink-0 text-white h-100 back-sidebar">
     <div class="d-flex aling-items-center border-black back-username center-userdata pb-3">
       <%= image_tag 'squared_foto.jpg', class: 'img-fluid mt-4 ms-4 rounded', width: '100', height: '50' %>
-      <p class="my-auto ms-3 text-uppercase" style="color: #62778A; font-weight: bold"> Mrigorir </p>
+      <p class="my-auto ms-3 text-uppercase" style="color: #62778A; font-weight: bold"> <%= current_user.username %> </p>
     </div>
     <div class="d-flex align-items-center justify-content-center border-dark back-username py-2 mb-4">
       <div class="flex-column d-flex text-center border-right-divisor pe-4">
         <span class="text-white"> 
-        2 
+          <%= current_user.count_followers %>
         </span> 
         <span class="c-letter-sidebar"> 
-        Following
+          Following
         </span>
       </div>
         <div class="flex-column d-flex text-center ps-4">
         <span class="text-white"> 
-        1 
+          <%= current_user.count_following %>
         </span> 
         <span class="c-letter-sidebar"> 
-        Followers
+          Followers
         </span>
       </div>
     </div>
@@ -30,7 +30,7 @@
         <% end %>
       </li>
       <li class="nav-item text-uppercase link-hover p-1">
-        <%= link_to home_path, class:'nav-link' do %> 
+        <%= link_to user_path(current_user.id), class:'nav-link' do %>
           <i class="fas fa-user me-1"></i>
           Profile
         <% end %>
