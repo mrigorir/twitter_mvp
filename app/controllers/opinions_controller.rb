@@ -21,6 +21,7 @@ class OpinionsController < ApplicationController
 
   def index
     @opinion = Opinion.new
+    @feed = Opinion.newsfeed_opinions
   end
 
   def require_login

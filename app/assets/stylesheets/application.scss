@@ -80,6 +80,10 @@ div.col-md-12 {
 
 //Sidebar
 
+.sidebar {
+  z-index: 10;
+}
+
 .back-username {
   background-color: #1b2a3d;
 }
@@ -143,10 +147,22 @@ div.col-md-12 {
 }
 
 .twitter-image {
-  background-image: url("https://d3t4nwcgmfrp9x.cloudfront.net/upload/como-conseguir-mas-seguidores-twitter.jpg");
-  background-size: cover;
-  width: 100%;
+  background-image: url(twitter-featured.png);
   height: 550px;
+}
+
+.tweet-image {
+  background-image: url(code.jpg);
+  height: 200px;
+}
+
+.twitter-image,
+.tweet-image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+  width: 100%;
 }
 
 .boton {
@@ -193,6 +209,17 @@ nav.nav .nav-link.active {
 
 .border-left {
   border-left: solid 1px #ccc;
+}
+
+//profile
+
+.border-sides {
+  border-left: solid 1px #ccc;
+  border-right: solid 1px #ccc;
+}
+
+i.text-muted {
+  cursor: not-allowed;
 }
 
 
@@ -249,7 +276,6 @@ nav.nav .nav-link.active {
 
 @media only screen and (min-width : 1024px) {
   .sidebar {
-    z-index: 10;
     overflow-y: auto;
     clear: both;
   }

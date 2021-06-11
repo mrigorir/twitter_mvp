@@ -17,7 +17,10 @@ class UsersController < ApplicationController
     end
   end
 
-  def edit
+  def edit; end
+
+  def show 
+    @user_opinions = set_user.created_opinions.ordered_by_most_recent.all
   end
 
   def update
@@ -28,6 +31,11 @@ class UsersController < ApplicationController
       flash.now[:message_edit] = @user.errors.full_messages
       render 'edit'
     end
+  end
+
+  def follow_user
+    current_user.follow_user(params[:id])
+    redirect_to user_path(params[:id])
   end
 
   def require_login

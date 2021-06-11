@@ -30,8 +30,8 @@
         </div>
         <div class="card bg-white rounded-5 my-5">
           <div class="card-body">
-            <h5 class="card-title text-uppercase c-twitter p-3 border-gray font-weight-bold"> 4 new tweets </h5>
-             <% Opinion.newsfeed_opinions.each do |opinions| %>
+            <h5 class="card-title text-uppercase c-twitter p-3 border-gray font-weight-bold"> <%= Opinion.count %> tweets </h5>
+            <% @feed.each do |opinions| %>
             <div class="d-flex mt-5">
               <%= image_tag 'squared_foto.jpg', class: 'img-fluid rounded', width: '80' %>
               <div class="d-flex flex-column flex-star ms-3">

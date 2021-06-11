@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
   get '/home', to: 'opinions#index'
   get '/signup', to: 'users#new'
+  get '/follow_user/:id' , to: 'users#follow_user', as: :follow_user
   
   resources :users, only: [:new, :create, :show, :edit, :update]
   resources :opinions, only: [:create, :show, :index]

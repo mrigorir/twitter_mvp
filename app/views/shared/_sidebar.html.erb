@@ -2,7 +2,7 @@
   <div class="d-flex flex-column flex-shrink-0 text-white h-100 back-sidebar">
     <div class="d-flex aling-items-center border-black back-username center-userdata pb-3">
       <%= image_tag 'squared_foto.jpg', class: 'img-fluid mt-4 ms-4 rounded', width: '100', height: '50' %>
-      <p class="my-auto ms-3 text-uppercase" style="color: #62778A; font-weight: bold"> <%= current_user.username %> </p>
+      <p class="my-auto ms-3 c-letter-sidebar font-weight-bold" > <%= link_to current_user.fullname, user_path(current_user.id), class: 'text-decoration-none c-letter-sidebar' %> </p>
     </div>
     <div class="d-flex align-items-center justify-content-center border-dark back-username py-2 mb-4">
       <div class="flex-column d-flex text-center border-right-divisor pe-4">

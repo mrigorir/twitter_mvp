@@ -12,7 +12,9 @@ class User < ApplicationRecord
   has_many :user_followings, through: :followings, source: :following
 
   def not_following
-    User.all.where.not(id: user_followings.select(:id)).where.not(id: id).order(created_at: :desc)
+    User.where.not(id: user_followings.select(:id)).where.not(id: id).order(created_at: :desc)
+    #ids = user_followings.find_by(:id)
+    #User.where("id NOT IN ?", ids)
   end
 
   def follow_user(user_id)

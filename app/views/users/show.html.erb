@@ -1,2 +1,71 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<section class="bg-opinions vh-100">
+  <div class="row">
+    <div class="col-md-9 p-0">
+      <div class="tweet-image mb-5">
+      </div>
+      <main class="mx-auto w-80">
+        <div class="card bg-white rounded-5 my-md-5">
+          <div class="card-body">
+            <h5 class="card-title text-uppercase c-twitter p-3 border-gray font-weight-bold"> All tweets </h5>
+             <% @user_opinions.each  do |opinion| %>
+            <div class="d-flex mt-5">
+              <%= image_tag 'squared_foto.jpg', class: 'img-fluid rounded', width: '80' %>
+              <div class="d-flex flex-column flex-star ms-3">
+                <h6 class="text-dark fs-6 font-weight-bold">
+                  <%= @user.username %>
+                </h6>
+                <p class="c-feed fs-7">
+                  <%= opinion.text %>
+                </p>
+              </div>
+            </div>
+            <% end %>
+         </div>
+        </div>
+      </main>
+    </div>
+    <div class="col-md-3 border-left p-0">
+      <div class="d-flex align-items-center justify-content-center mt-3">
+        <% if !current_user.already_follow?(@user.id) && @user.id != current_user.id %>
+          <%= link_to follow_user_path(@user.id) do %>
+          <i class="fas fa-plus-circle c-nav-items font-weight-bold fs-2 me-4"> </i>
+          <% end %>
+        <% else %>
+           <i class="fas fa-plus-circle c-letter-sidebar font-weight-bold fs-2 me-4 text-muted" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Already following"> </i>
+        <% end %>
+        <%= image_tag 'squared_foto.jpg', class: 'img-fluid rounded-circle', width: '100' %>
+        <i class="fas fa-list-alt c-nav-items font-weight-bold fs-2 ms-4" data-bs-toggle="tooltip" data-bs-placement="bottom" title="A huge list!"> </i>
+      </div>
+      <div class="d-flex flex-column align-items-center justify-content-center mt-md-3">
+        <h6 class="text-dark fs-7 font-weight-bold"> <%= link_to @user.fullname, user_path(@user), class: 'text-decoration-none c-letter-sidebar' %> </h6>
+        <p class="c-letter-sidebar fs-7"> @<%= @user.username %> </p>
+      </div>
+      <div class="d-flex align-items-center justify-content-center border broder-1">
+        <div class="d-flex flex-column align-items-center justify-content-center me-4">
+          <h6 class="text-dark fs-7 font-weight-bold"> <%= @user.opinion_count %> </h6>
+          <p class="c-letter-sidebar fs-7"> Tweets  </p>
+        </div>
+        <div class="d-flex flex-column align-items-center justify-content-center py-2 px-3 border-sides ">
+          <h6 class="text-dark fs-7 font-weight-bold"> <%= @user.count_followers %> </h6>
+          <p class="c-letter-sidebar fs-7"> Following </p>
+        </div>
+        <div class="d-flex flex-column align-items-center justify-content-center ms-4">
+          <h6 class="text-dark fs-7 font-weight-bold"> <%= @user.count_following %> </h6>
+          <p class="c-letter-sidebar fs-7"> Followers </p>
+        </div>
+      </div>
+      <div class="border-gray border-gray-centered py-3 ps-2 mt-md-4 mt-sm-2">
+        <h3 class="text-uppercase c-letter-sidebar fs-6"> Followed by </h3>
+      </div>
+       <% @user.user_followers.each do |followers| %>
+      <div class="d-flex align-items-center mt-4 ms-4">
+        <%= image_tag 'squared_foto.jpg', class: 'img-fluid rounded-circle', width: '60' %>
+        <div class="d-flex flex-column flex-star ms-3 mt-3">
+          <h6 class="text-dark fs-7 font-weight-bold"> <%= link_to followers.fullname, user_path(followers.id), class: 'text-decoration-none c-letter-sidebar' %> </h6>
+          <p class="c-letter-sidebar fs-7"> @<%= followers.username %> </p>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</section>
