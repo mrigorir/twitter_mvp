@@ -31,7 +31,7 @@
         <div class="card bg-white rounded-5 my-5">
           <div class="card-body">
             <h5 class="card-title text-uppercase c-twitter p-3 border-gray font-weight-bold"> <%= Opinion.count %> tweets </h5>
-                <%= render 'opinions' unless Opinion.count == 0 %>
+            <%= render @opinions if  Opinion.count > 0 %>
             <div class="d-flex align-items-center justify-content-center mt-5">
               <%= link_to 'View more', root_path, class: 'text-uppercase text-decoration-none font-weight-bold' %>
             </div>
@@ -46,7 +46,11 @@
       </div>
       <% current_user.not_following.each do |f| %>
       <div class="d-flex align-items-center mt-4 ms-4">
-        <%= image_tag 'squared_foto.jpg', class: 'img-fluid rounded-circle', width: '60' %>
+        <% if f.avatar.attached? %>
+          <image src="<%= (url_for(f.avatar)) %>" class="img-fluid ms-4 rounded" width="60">
+        <% else %>
+          <img src="<%= asset_path 'user.png' %>" class="img-fluid ms-4 rounded" width="60">
+        <% end %>
         <div class="d-flex flex-column flex-star ms-3 mt-3">
           <h6 class="text-dark fs-7 font-weight-bold"> <%= link_to f.fullname, user_path(f.id), class: 'text-decoration-none c-letter-sidebar' %> </h6>
           <p class="c-letter-sidebar fs-7"> <%= f.username %> </p>
