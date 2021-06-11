@@ -28,7 +28,7 @@
       <div class="d-flex align-items-center justify-content-center mt-3">
         <% if !current_user.already_follow?(@user.id) && @user.id != current_user.id %>
           <%= link_to follow_user_path(@user.id) do %>
-          <i class="fas fa-plus-circle c-nav-items font-weight-bold fs-2 me-4"> </i>
+            <i class="fas fa-plus-circle c-nav-items font-weight-bold fs-2 me-4"> </i>
           <% end %>
         <% else %>
            <i class="fas fa-plus-circle c-letter-sidebar font-weight-bold fs-2 me-4 text-muted" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Already following"> </i>

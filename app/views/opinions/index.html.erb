@@ -1,4 +1,4 @@
-<section class="bg-opinions">
+<section class="bg-opinions vh-100">
   <div class="row">
     <div class="col-md-9 p-0">
 
@@ -31,19 +31,7 @@
         <div class="card bg-white rounded-5 my-5">
           <div class="card-body">
             <h5 class="card-title text-uppercase c-twitter p-3 border-gray font-weight-bold"> <%= Opinion.count %> tweets </h5>
-            <% @feed.each do |opinions| %>
-            <div class="d-flex mt-5">
-              <%= image_tag 'squared_foto.jpg', class: 'img-fluid rounded', width: '80' %>
-              <div class="d-flex flex-column flex-star ms-3">
-                <h6 class="text-dark fs-6 font-weight-bold">
-                  <%= link_to opinions.author.fullname, user_path(opinions.author.id), class: 'text-decoration-none text-dark' %>
-                </h6>
-                <p class="c-feed fs-7">
-                  <%= opinions.text %>
-                </p>
-              </div>
-            </div>
-              <% end %>
+                <%= render 'opinions' unless Opinion.count == 0 %>
             <div class="d-flex align-items-center justify-content-center mt-5">
               <%= link_to 'View more', root_path, class: 'text-uppercase text-decoration-none font-weight-bold' %>
             </div>

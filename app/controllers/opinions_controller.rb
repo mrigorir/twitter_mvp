@@ -10,7 +10,8 @@ class OpinionsController < ApplicationController
       current_user.save
       redirect_to home_path
     else
-      render 'show'
+      flash[:notcie] = 'Tweet created!'
+      redirect_to home_path
     end
   end
 
@@ -21,7 +22,7 @@ class OpinionsController < ApplicationController
 
   def index
     @opinion = Opinion.new
-    @feed = Opinion.newsfeed_opinions
+    @opinions = Opinion.newsfeed_opinions
   end
 
   def require_login

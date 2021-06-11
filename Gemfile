@@ -41,13 +41,18 @@ group :development do
   gem 'rack-mini-profiler', '~> 2.0'
 end
 
-group :test do
-  # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 3.26'
+group :development, :test do
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'formulaic'
+  gem 'rspec'
+  gem 'rspec-rails', '~> 5.0.0'
   gem 'selenium-webdriver'
-  # Easy installation and use of web drivers to run system tests with browsers
-  gem 'webdrivers'
-end
+  gem 'shoulda-matchers'
+  gem 'webdrivers', require: !ENV['SELENIUM_REMOTE_URL']
+		end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
