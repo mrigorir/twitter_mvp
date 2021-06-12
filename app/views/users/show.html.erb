@@ -30,12 +30,16 @@
     </div>
     <div class="col-md-3 border-left p-0">
       <div class="d-flex align-items-center justify-content-center mt-4">
-        <% if !current_user.already_follow?(@user.id) && @user.id != current_user.id %>
-          <%= link_to follow_user_path(@user.id) do %>
-            <i class="fas fa-plus-circle c-nav-items font-weight-bold fs-2"> </i>
+        <% if @user.id == current_user.id %>
+          <i class="fas fa-plus-circle c-letter-sidebar text-muted font-weight-bold fs-2" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Yo can't follow yourself"> </i>
+        <% elsif !current_user.already_follow?(@user) %>
+          <%= link_to follow_this_user_path(@user) do %>
+           <i class="fas fa-plus-circle c-nav-items font-weight-bold fs-2" data-bs-toggle="tooltip" data-bs-placement="bottom" title="follow this user"> </i>
           <% end %>
         <% else %>
-           <i class="fas fa-plus-circle c-letter-sidebar font-weight-bold fs-2 text-muted" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Already following"> </i>
+          <%= link_to unfollow_this_user_path(@user) do %>
+            <i class="fas fa-minus-circle text-danger font-weight-bold fs-2" data-bs-toggle="tooltip" data-bs-placement="bottom" title="unfollow"> </i>
+          <% end %>
         <% end %>
         <% if @user.avatar.attached? %>
           <image src="<%= (url_for(@user.avatar)) %>" class="img-fluid mx-4 rounded-circle" width="95">

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :require_login, only: %i[show follow_user edit update]
-  before_action :set_user, only: [:show]
+  before_action :set_user, only: [:show,]
   
   def new
     @user = User.new
@@ -37,10 +37,16 @@ class UsersController < ApplicationController
     end
   end
 
-  def follow_user
+  def follow_this_user
     current_user.follow_user(params[:id])
-    flash[:notice] = "Great, user followed!"
     redirect_to user_path(params[:id])
+    flash[:notice] = "Great, user followed!"
+  end
+
+  def unfollow_this_user
+    current_user.unfollow_user(params[:id])
+    redirect_to user_path(params[:id])
+    flash[:alert] = "You are not following this user anymore!"
   end
 
   def require_login
