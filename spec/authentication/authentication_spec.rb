@@ -6,7 +6,7 @@ RSpec.describe 'Siging Up', type: :feature do
     visit signup_path
     click_on 'Sign up'
     fill_in 'username', with: user.username
-    
+
     click_on 'Sign up'
     sleep(3)
     visit home_path

@@ -6,7 +6,7 @@ module SessionsHelper
   def current_user
     @current_user ||= User.find_by(username: session[:username]) if session[:username]
   end
-  
+
   def logged_in?
     !current_user.nil?
   end
@@ -15,7 +15,7 @@ module SessionsHelper
     session.delete(:username)
   end
 
-  def autheticate_user      
+  def autheticate_user
     if logged_in?
       flash[:alert] = 'You need to be logged in.'
       redirect_to login_path

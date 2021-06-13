@@ -8,11 +8,11 @@ class OpinionsController < ApplicationController
     if @opinion.save
       current_user.opinion_count += 1
       current_user.save
-      redirect_to home_path
+      flash[:notice] = 'Tweet created!'
     else
-      flash[:notcie] = 'Tweet created!'
-      redirect_to home_path
+      flash[:alert] = 'Tweet cannot be blank!'
     end
+    redirect_to home_path
   end
 
   def show
@@ -30,7 +30,7 @@ class OpinionsController < ApplicationController
   end
 
   private
-  
+
   def opinion_param
     params.require('opinion').permit(:text)
   end

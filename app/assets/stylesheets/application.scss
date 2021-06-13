@@ -17,7 +17,7 @@
 //Variables
 
 $body-color: #f0f1f1;
-$c-letter-sidebar: #62778A;
+$c-letter-sidebar: #62778a;
 $bg-twitter: #53a7e7;
 $c-nav-items: #337ab7;
 $login-border: #bebfc1;
@@ -27,6 +27,7 @@ $signin-background: #f3f4f7;
 
 body {
   overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .btn-primary {
@@ -38,7 +39,7 @@ div.col-md-12 {
 }
 
 .w-80 {
-  width: 90%; 
+  width: 90%;
 }
 
 .c-twitter {
@@ -58,7 +59,7 @@ div.col-md-12 {
 }
 
 .border-gray-centered {
-  width:90%;
+  width: 85%;
   margin: 0 auto;
 }
 
@@ -89,7 +90,7 @@ div.col-md-12 {
 }
 
 .back-sidebar {
-  background-color: #213246
+  background-color: #213246;
 }
 
 .bg-opinions {
@@ -97,7 +98,7 @@ div.col-md-12 {
 }
 
 .c-letter-sidebar {
-  color: $c-letter-sidebar
+  color: $c-letter-sidebar;
 }
 
 .border-black {
@@ -116,24 +117,12 @@ div.col-md-12 {
   color: $c-nav-items;
 }
 
-.c-twitter {
-  color : $bg-twitter;
-}
-
 .signin-back {
   background-color: $signin-background;
 }
 
 .link-hover .nav-link {
   color: $c-letter-sidebar;
-}
-
-.link-hover:hover {
-  background-color: $bg-twitter;
-}
-
-.link-hover:hover .nav-link {
-  color:white;
 }
 
 //Login
@@ -222,36 +211,19 @@ i.text-muted {
   cursor: not-allowed;
 }
 
+//hovers
 
+.link-hover:hover {
+  background-color: $bg-twitter;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.link-hover:hover .nav-link {
+  color: white;
+}
 
 //Queries
 
-@media only screen and (max-width : 1024px) {
-  
+@media only screen and (max-width: 1024px) {
   li.nav-item {
     text-align: center;
     padding-bottom: 10px;
@@ -271,10 +243,9 @@ i.text-muted {
   .center-userdata {
     justify-content: center;
   }
-
 }
 
-@media only screen and (min-width : 1024px) {
+@media only screen and (min-width: 1024px) {
   .sidebar {
     overflow-y: auto;
     clear: both;

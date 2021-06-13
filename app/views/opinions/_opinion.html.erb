@@ -1,6 +1,6 @@
 <div class="d-flex mt-5">
   <% if opinion.author.avatar.attached? %>
-    <image src="<%= (url_for(opinion.autor.avatar)) %>" class="img-fluid ms-4 rounded" width="80">
+    <image src="<%= (url_for(opinion.author.avatar)) %>" class="img-fluid ms-4 rounded" width="80">
   <% else %>
     <img src="<%= asset_path 'user.png' %>" class="img-fluid ms-4 rounded-cirlce" width="80">
   <% end %>

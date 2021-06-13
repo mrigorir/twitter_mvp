@@ -1,4 +1,4 @@
-<section class="bg-opinions vh-100">
+<section class="bg-opinions">
   <div class="row">
     <div class="col-md-9 p-0">
       <div class="tweet-image mb-5">
@@ -6,8 +6,8 @@
       <main class="mx-auto w-80">
         <div class="card bg-white rounded-5 my-md-5">
           <div class="card-body">
-            <h5 class="card-title text-uppercase c-twitter p-3 border-gray font-weight-bold"> All tweets </h5>
-             <% @user.created_opinions.ordered_by_most_recent.all.each  do |opinion| %>
+            <h5 class="card-title text-uppercase c-twitter p-3 border-gray font-weight-bold"> My tweets </h5>
+             <% @user_opinions.each  do |opinion| %>
             <div class="d-flex mt-4">
               <% if @user.avatar.attached? %>
                 <image src="<%= (url_for(@user.avatar)) %>" class="img-fluid ms-4 rounded-circle" width="80">
@@ -28,7 +28,7 @@
         </div>
       </main>
     </div>
-    <div class="col-md-3 border-left p-0">
+    <div class="col-md-3 border-left p-0 vh-100">
       <div class="d-flex align-items-center justify-content-center mt-4">
         <% if @user.id == current_user.id %>
           <i class="fas fa-plus-circle c-letter-sidebar text-muted font-weight-bold fs-2" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Yo can't follow yourself"> </i>
@@ -66,21 +66,21 @@
           <p class="c-letter-sidebar fs-7"> Followers </p>
         </div>
       </div>
-      <div class="border-gray border-gray-centered py-3 ps-2 mt-md-4 mt-sm-2">
+      <div class="border-gray border-gray-centered py-3 ps-3 mt-md-4 mt-sm-2">
         <h3 class="text-uppercase c-letter-sidebar fs-6"> Followed by </h3>
       </div>
-       <% @user.user_followers.each do |followers| %>
-      <div class="d-flex align-items-center mt-4 ms-4">
-        <% if followers.avatar.attached? %>
-          <image src="<%= (url_for(followers.avatar)) %>" class="img-fluid ms-4 rounded-circle" width="60">
-        <% else %>
-          <img src="<%= asset_path 'user.png' %>" class="img-fluid ms-4 rounded-circle" width="60">
-        <% end %>
-        <div class="d-flex flex-column flex-star ms-3">
-          <h6 class="text-dark fs-7 font-weight-bold"> <%= link_to followers.fullname, user_path(followers.id), class: 'text-decoration-none c-letter-sidebar' %> </h6>
-          <p class="c-letter-sidebar fs-7"> @<%= followers.username %> </p>
+      <% @user.followers.each do |follows| %>
+        <div class="d-flex align-items-center mt-4 ms-4">
+          <% if follows.avatar.attached? %>
+            <image src="<%= (url_for(follows.avatar)) %>" class="img-fluid ms-4 rounded-circle" width="60">
+          <% else %>
+            <img src="<%= asset_path 'user.png' %>" class="img-fluid ms-4 rounded-circle" width="60">
+          <% end %>
+          <div class="d-flex flex-column flex-star ms-3">
+            <h6 class="text-dark fs-7 font-weight-bold"> <%= link_to follows.fullname, user_path(follows.id), class: 'text-decoration-none c-letter-sidebar' %> </h6>
+            <p class="c-letter-sidebar fs-7"> @<%= follows.username %> </p>
+          </div>
         </div>
-      </div>
       <% end %>
     </div>
   </div>
