@@ -1,6 +1,9 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
+# Twitter MVP
+
 > This is the Ruby on Rails capstone project inspired on [twitter_redesign](https://www.notion.so/Twitter-redesign-f8a8d48453d54d1a949bb0ceab4c8718) I used a lot of knowledge acquired throughout the Ruby on Rails section, MVC, HTML, CSS, and bootstrap concepts, among other knowledge acquired on Microverse to create this MVP app.
+
 
 ## What was built in this project:
 
@@ -11,6 +14,7 @@
 - The user profile view shows a cover image above the specific user opinions and other user's information on the right.
 
 - The functionality to follow/unfollow is very intuitive. '+' button to follow, and if the user wants to stop following, he can do so by pressing the '-' bottom to unfollow. (only visible when the user it's being followed).
+
 
 
 ## Built With
@@ -38,6 +42,7 @@
 - Stylelint
 
 
+
 ## Prerequisites
 
 Text Editor (VSCode is suggested.), Ruby Rails Bundler, Yarn, SQL, Postgres
@@ -45,6 +50,7 @@ Text Editor (VSCode is suggested.), Ruby Rails Bundler, Yarn, SQL, Postgres
 ## :star::star: Live Demo :star::star:
 
 click to see [live demo]()
+
 
 
 ## Getting Started
@@ -72,6 +78,7 @@ To get a local copy up and running follow these simple example steps:
 - After you get the project aiming to the desired directory, you need now to install ruby globally and follow the steps below:
 
 
+
 ### Please note:
 
 - I'm using boostrap CDN, if you want to download it, you can follow these steps:
@@ -94,6 +101,7 @@ To get a local copy up and running follow these simple example steps:
 - Add the following line on application.scss: `@import 'bootstrap/scss/bootstrap';`
 
 - Remember to delete bootstrap CDN tags on `app/views/layouts/application.html.erb` file
+
 
 
 ### Setup
@@ -147,6 +155,7 @@ bundle install
 - Run rails db:setup to migrate and create databases on pgadmin.
 
 
+
 ### Github Actions
 
 To make sure the linters' checks using Github Actions work properly, you should follow the next steps:
@@ -155,6 +164,7 @@ To make sure the linters' checks using Github Actions work properly, you should 
 2. Create the `feature/branch` and push.
 3. Start working on your milestone as usual.
 4. Open a PR from the `feature/branch` when your work is done.
+
 
 
 ### Usage
@@ -168,11 +178,13 @@ Start server with:
 Open `http://localhost:3000/` in your browser.
 
 
+
 ### Run tests
 
 ```
     rpsec 
 ```
+
 
 ## Author
 
