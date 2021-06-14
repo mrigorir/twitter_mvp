@@ -29,7 +29,7 @@ class UsersController < ApplicationController
     @user = User.find(current_user.id)
     if @user.update(user_params)
       flash[:notice] = 'Profile updated!'
-      redirect_to edit_user_path(current_user.id)
+      redirect_to user_path(current_user.id)
     else
       flash.now[:message_edit] = @user.errors.full_messages
       render 'edit'

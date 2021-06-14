@@ -1,0 +1,9 @@
+@import 'variables.scss';
+
+.link-hover:hover {
+  background-color: $bg-twitter;
+}
+
+.link-hover:hover .nav-link {
+  color: white;
+}

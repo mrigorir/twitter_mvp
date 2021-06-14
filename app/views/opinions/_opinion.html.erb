@@ -1,8 +1,8 @@
 <div class="d-flex mt-5">
   <% if opinion.author.avatar.attached? %>
-    <image src="<%= (url_for(opinion.author.avatar)) %>" class="img-fluid ms-4 rounded" width="80">
+    <%= image_tag (url_for(opinion.author.avatar)), class: 'img-fluid ms-4 rounded', width: '80' %>
   <% else %>
-    <img src="<%= 'https://lh3.google.com/u/0/d/1XMTJNQhtYXbKGgV3jHSDepEbmx1_ll4i=w200-h190-p-k-nu-iv1' %>" class="img-fluid ms-4 rounded-cirlce" width="80">
+    <%= image_tag 'https://lh3.google.com/u/0/d/1XMTJNQhtYXbKGgV3jHSDepEbmx1_ll4i=w200-h190-p-k-nu-iv1', class: 'img-fluid ms-4 rounded-circle', width: '80' %>
   <% end %>
   <div class="d-flex flex-column flex-star ms-3 mt-3">
     <h6 class="text-dark fs-6 font-weight-bold">

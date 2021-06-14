@@ -14,16 +14,9 @@
  *= require_self
  */
 
-//Variables
-
-$body-color: #f0f1f1;
-$c-letter-sidebar: #62778a;
-$bg-twitter: #53a7e7;
-$c-nav-items: #337ab7;
-$login-border: #bebfc1;
-$signin-background: #f3f4f7;
-
 //general
+
+@import 'variables.scss';
 
 body {
   overflow-x: hidden;
@@ -42,116 +35,12 @@ div.col-md-12 {
   width: 90%;
 }
 
-.c-twitter {
-  color: $bg-twitter;
-}
-
-.c-feed {
-  color: #ccc;
-}
-
-.border-gray {
-  border-bottom: solid 2px #ccc;
-}
-
-.border-topp {
-  border-top: solid 2px #ccc;
-}
-
-.border-gray-centered {
-  width: 85%;
-  margin: 0 auto;
-}
-
-.font-weight-bold {
-  font-weight: bold;
-}
-
-.body {
-  font-family: "Poppins", sans-serif;
-}
-
-.fs-6 {
-  font-size: 18px;
-}
-
-.fs-7 {
-  font-size: 15px;
-}
-
-//Sidebar
-
 .sidebar {
   z-index: 10;
 }
 
-.back-username {
-  background-color: #1b2a3d;
-}
-
-.back-sidebar {
-  background-color: #213246;
-}
-
-.bg-opinions {
-  background-color: $body-color;
-}
-
-.c-letter-sidebar {
-  color: $c-letter-sidebar;
-}
-
-.border-black {
-  border-bottom: solid 2px #172531;
-}
-
-.border-right-divisor {
-  border-right: solid 2px #172531;
-}
-
-.bg-twitter {
-  background-color: $bg-twitter;
-}
-
-.c-nav-items {
-  color: $c-nav-items;
-}
-
-.signin-back {
-  background-color: $signin-background;
-}
-
 .link-hover .nav-link {
   color: $c-letter-sidebar;
-}
-
-//Login
-
-.login-back {
-  background-image: linear-gradient(to bottom right, #1b2a3d, #4e9fdc);
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  padding: 80px;
-}
-
-.twitter-image {
-  background-image: url('https://lh3.google.com/u/0/d/1zWE9rTe4oJd0WHJqLaelAZOjEzEXrutS=w1920-h880-iv3');
-  height: 550px;
-}
-
-.tweet-image {
-  background-image: url('https://lh3.google.com/u/0/d/1g9lyZzcSyDuIN74H2anvLUyn9_lyPXJ6=w1519-h790-iv4');
-  height: 200px;
-}
-
-.twitter-image,
-.tweet-image {
-  width: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position-y: center;
-  background-position-x: center;
 }
 
 .boton {
@@ -171,18 +60,6 @@ span.input-group-text {
   width: 60%;
 }
 
-//edit profile
-
-.mb-10 {
-  margin-bottom: 120px;
-}
-
-.mt-10 {
-  margin-top: 100px;
-}
-
-//feed
-
 nav.nav .nav-link {
   float: left;
   display: block;
@@ -194,60 +71,6 @@ nav.nav .nav-link.active {
   border-bottom: 3px solid #53a7e7;
 }
 
-//who to follow
-
-.border-left {
-  border-left: solid 1px #ccc;
-}
-
-//profile
-
-.border-sides {
-  border-left: solid 1px #ccc;
-  border-right: solid 1px #ccc;
-}
-
 i.text-muted {
   cursor: not-allowed;
-}
-
-//hovers
-
-.link-hover:hover {
-  background-color: $bg-twitter;
-}
-
-.link-hover:hover .nav-link {
-  color: white;
-}
-
-//Queries
-
-@media only screen and (max-width: 1024px) {
-  li.nav-item {
-    text-align: center;
-    padding-bottom: 10px;
-    padding-top: 10px;
-  }
-
-  .divisor {
-    border-bottom: solid 2px $c-nav-items;
-    width: 60%;
-    margin: 0 auto;
-  }
-
-  .edit-profile {
-    margin-top: 0;
-  }
-
-  .center-userdata {
-    justify-content: center;
-  }
-}
-
-@media only screen and (min-width: 1024px) {
-  .sidebar {
-    overflow-y: auto;
-    clear: both;
-  }
 }

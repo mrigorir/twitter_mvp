@@ -28,7 +28,7 @@
               <%= notice %>
             </div>
           </div>
-        <%end%>
+        <% end %>
         <% if alert %>
          <div class="alert alert-danger d-flex align-items-center justify-content-center alert-dismissible fade show mb-0" role="alert">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
@@ -39,12 +39,12 @@
               <%= alert %>
             </div>
           </div>
-        <%end%>
-        <% if logged_in? %>
-          <%= render 'shared/sidebar' %>
-        <% else %>
-          <%= yield %>
         <% end %>
+        <% if not_logged_in? %>
+          <%= yield %>
+        <% else %>
+          <%= render 'shared/sidebar' %>
+        <% end %> 
       </div>
     </div>
      <script>

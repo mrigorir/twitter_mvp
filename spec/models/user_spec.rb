@@ -7,7 +7,6 @@ RSpec.describe User, type: :model do
 
   it { should validate_length_of(:username).is_at_most(10).on(:create) }
   it { should validate_length_of(:fullname).is_at_most(60).on(:create) }
-  it { should validate_uniqueness_of(:username) }
 
   describe 'ActiveRecord associations' do
     it { should have_many(:created_opinions).class_name('Opinion') }

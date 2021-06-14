@@ -1,17 +1,17 @@
 class ApplicationController < ActionController::Base
   def login(user)
-    session[:username] = user.username
+    session[:id] = user.id
   end
 
   def current_user
-    @current_user ||= User.find_by(username: session[:username]) if session[:username]
+    @current_user ||= User.find_by(id: session[:id]) if session[:id]
   end
 
   def logged_in?
     !current_user.nil?
   end
 
-  def autheticate_user
+  def authenticate_user
     if logged_in?
       flash[:alert] = 'You need to be logged in.'
       redirect_to login_path
@@ -21,6 +21,6 @@ class ApplicationController < ActionController::Base
   end
 
   def logout
-    session.delete(:username)
+    session.delete(:id)
   end
 end

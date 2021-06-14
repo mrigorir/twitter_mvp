@@ -1,0 +1,26 @@
+.login-back {
+  background-image: linear-gradient(to bottom right, #1b2a3d, #4e9fdc);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  padding: 80px;
+}
+
+.twitter-image {
+  background-image: url('https://lh3.google.com/u/0/d/1zWE9rTe4oJd0WHJqLaelAZOjEzEXrutS=w1920-h880-iv3');
+  height: 550px;
+}
+
+.tweet-image {
+  background-image: url('https://lh3.google.com/u/0/d/1g9lyZzcSyDuIN74H2anvLUyn9_lyPXJ6=w1519-h790-iv4');
+  height: 200px;
+}
+
+.twitter-image,
+.tweet-image {
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: center;
+}
