@@ -10,7 +10,7 @@ class OpinionsController < ApplicationController
       current_user.save
       flash[:notice] = 'Tweet created!'
     else
-      flash[:alert] = 'Tweet cannot be blank!'
+      flash[:alert] = @opinion.errors.full_messages.join
     end
     redirect_to home_path
   end

@@ -19,7 +19,7 @@
           <h5 class="card-title text-uppercase c-letter-sidebar p-3"> Tweet Something </h5>
           <%= form_for @opinion do |opinion| %>
             <div class="form-group px-3">
-              <%= opinion.text_area :text, placeholder: 'Compose your tweet...', class:"form-control", id:"text" %>
+              <%= opinion.text_area :text, placeholder: 'Compose your tweet...', class: "form-control", id: "opinion_text" %>
             </div>
             <div class="form-group d-flex align-items-center justify-content-center mt-3">
               <%= opinion.submit "Tweet it!", class: "btn btn-primary fs-6" %>
@@ -48,7 +48,7 @@
       <% if f.avatar.attached? %>
         <image src="<%= (url_for(f.avatar)) %>" class="img-fluid ms-4 rounded" width="60">
       <% else %>
-        <img src="<%= asset_path 'user.png' %>" class="img-fluid ms-4 rounded" width="60">
+        <img src="<%='https://lh3.google.com/u/0/d/1XMTJNQhtYXbKGgV3jHSDepEbmx1_ll4i=w200-h190-p-k-nu-iv1' %>" class="img-fluid ms-4 rounded" width="60">
       <% end %>
       <div class="d-flex flex-column flex-star ms-3 mt-3">
         <h6 class="text-dark fs-7 font-weight-bold"> <%= link_to f.fullname, user_path(f.id), class: 'text-decoration-none c-letter-sidebar' %> </h6>
@@ -68,7 +68,7 @@
       <li class="mb-3"> <%= link_to '#onearmy', home_path, class: 'text-decoration-none c-letter-sidebar fs-7 ms-3' %> </li>
       <li class="mb-3"> <%= link_to '#loremipsundolorsitamet', home_path, class: 'text-decoration-none c-letter-sidebar fs-7 ms-3' %> </li>
       <li class="mb-3"> <%= link_to '#crispaloalargenico', home_path, class: 'text-decoration-none c-letter-sidebar fs-7 ms-3' %> </li>
-      <li class="mb-3"> <%= link_to '#Knockara Beau', home_path, class: 'text-decoration-none c-letter-sidebar fs-7 ms-3' %> </li>
+      <li class="mb-3"> <%= link_to '#Knockara', home_path, class: 'text-decoration-none c-letter-sidebar fs-7 ms-3' %> </li>
       <li> <%= link_to '#tributoalpasado', home_path, class: 'text-decoration-none c-letter-sidebar fs-7 ms-3' %> </li>
     </ul>
   </div>
