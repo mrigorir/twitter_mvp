@@ -4,9 +4,7 @@ RSpec.describe 'Siging Up', type: :feature do
   let(:user) { User.new(username: 'tarly', fullname: 'truly') }
   scenario 'Sign up with valid inputs' do
     visit signup_path
-    click_on 'Sign up'
     fill_in 'username', with: user.username
-
     click_on 'Sign up'
     sleep(3)
     visit home_path
