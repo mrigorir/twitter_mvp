@@ -44,7 +44,7 @@
         <% if @user.avatar.attached? %>
           <%= image_tag (url_for(@user.avatar)), class: 'img-fluid mx-4 rounded-circle', width: '95' %>
         <% else %>
-          <%= image_tag 'user.png', class: 'img-fluid ms-4 rounded-circle', width: '95' %>
+          <%= image_tag 'user.png', class: 'img-fluid mx-4 rounded-circle', width: '95' %>
         <% end %>
         <i class="fas fa-list-alt c-nav-items font-weight-bold fs-2" data-bs-toggle="tooltip" data-bs-placement="bottom" title="A huge list!"> </i>
       </div>

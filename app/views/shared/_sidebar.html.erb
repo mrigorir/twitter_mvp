@@ -1,4 +1,4 @@
-<div class="col-md-2 p-0 sidebar">
+<div class="col-md-2 p-0 sidebar vh-100">
   <div class="d-flex flex-column flex-shrink-0 text-white h-100 back-sidebar">
     <div class="d-flex aling-items-center border-black back-username center-userdata pb-3">
       <% if current_user.avatar.attached? %>
@@ -43,7 +43,7 @@
     </ul>
   </div>
 </div>
-<div class="col-md-10 p-0 h-100">
+<div class="col-md-10 p-0">
   <nav class="navbar navbar-expand-lg navbar-light bg-twitter py-3">
     <div class="container-fluid">
       <%= link_to home_path, class: 'navbar-brand' do %>
