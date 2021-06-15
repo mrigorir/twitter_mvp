@@ -5,10 +5,10 @@
 > This is the Ruby on Rails capstone project inspired on [twitter_redesign](https://www.notion.so/Twitter-redesign-f8a8d48453d54d1a949bb0ceab4c8718) I used a lot of knowledge acquired throughout the Ruby on Rails section, MVC, HTML, CSS, and bootstrap concepts, among other knowledge acquired on Microverse to create this MVP app.
 
 ## Main Page
-[Screenshot Main Page](./app/assets/images/index.png)
+![Screenshot Main Page](./app/assets/images/index.png)
 
 ## User Page
-[Screenshot Profile Page](./app/assets/images/profile.png)
+![Screenshot Profile Page](./app/assets/images/profile.png)
 
 
 ## What was built in this project:
