@@ -53,7 +53,7 @@
 
 Text Editor (VSCode is suggested.), Ruby Rails Bundler, Yarn, SQL, Postgres
 
-## :star::star: Live Demo :star::star:
+## :star::star: [Live Demo](https://calm-spire-06680.herokuapp.com/) :star::star:
 
 click to see [live demo]()
 
