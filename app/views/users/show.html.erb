@@ -10,9 +10,9 @@
              <% @user_opinions.each  do |opinion| %>
             <div class="d-flex mt-4">
               <% if @user.avatar.attached? %>
-                <image src="<%= (url_for(@user.avatar)) %>" class="img-fluid ms-4 rounded-circle" width="80">
+               <%= image_tag (url_for(@user.avatar)), class: 'img-fluid ms-4 rounded-circle', width: '80' %>
               <% else %>
-                <img src="<%= 'https://lh3.google.com/u/0/d/1XMTJNQhtYXbKGgV3jHSDepEbmx1_ll4i=w200-h190-p-k-nu-iv1' %>" class="img-fluid ms-4 rounded-circle" width="80">
+                <%= image_tag 'user.png', class: 'img-fluid ms-4 rounded-circle', width: '80' %>
               <% end %>
               <div class="d-flex flex-column flex-start ms-3 mt-2">
                 <h6 class="text-dark fs-6 font-weight-bold">
@@ -42,9 +42,9 @@
           <% end %>
         <% end %>
         <% if @user.avatar.attached? %>
-          <image src="<%= (url_for(@user.avatar)) %>" class="img-fluid mx-4 rounded-circle" width="95">
+          <%= image_tag (url_for(@user.avatar)), class: 'img-fluid mx-4 rounded-circle', width: '95' %>
         <% else %>
-          <img src="<%= 'https://lh3.google.com/u/0/d/1XMTJNQhtYXbKGgV3jHSDepEbmx1_ll4i=w200-h190-p-k-nu-iv1' %>" class="img-fluid mx-4 rounded-circle" width="95">
+          <%= image_tag 'user.png', class: 'img-fluid ms-4 rounded-circle', width: '95' %>
         <% end %>
         <i class="fas fa-list-alt c-nav-items font-weight-bold fs-2" data-bs-toggle="tooltip" data-bs-placement="bottom" title="A huge list!"> </i>
       </div>
@@ -72,9 +72,9 @@
       <% @user.followers.each do |follows| %>
         <div class="d-flex align-items-center mt-4 ms-4">
           <% if follows.avatar.attached? %>
-            <image src="<%= (url_for(follows.avatar)) %>" class="img-fluid ms-4 rounded-circle" width="60">
+             <%= image_tag (url_for(follows.avatar)), class: 'img-fluid ms-4 rounded-circle', width: '60' %>
           <% else %>
-            <img src="<%= 'https://lh3.google.com/u/0/d/1XMTJNQhtYXbKGgV3jHSDepEbmx1_ll4i=w200-h190-p-k-nu-iv1' %>" class="img-fluid ms-4 rounded-circle" width="60">
+           <%= image_tag 'user.png', class: 'img-fluid ms-4 rounded-circle', width: '60' %>
           <% end %>
           <div class="d-flex flex-column flex-star ms-3">
             <h6 class="text-dark fs-7 font-weight-bold"> <%= link_to follows.fullname, user_path(follows.id), class: 'text-decoration-none c-letter-sidebar' %> </h6>

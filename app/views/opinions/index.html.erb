@@ -48,7 +48,7 @@
       <% if f.avatar.attached? %>
         <%= image_tag (url_for(f.avatar)), class: 'img-fluid ms-4 rounded', width: '60' %>
       <% else %>
-        <%= image_tag 'https://lh3.google.com/u/0/d/1XMTJNQhtYXbKGgV3jHSDepEbmx1_ll4i=w200-h190-p-k-nu-iv1', class: 'img-fluid ms-4 rounded', width: '60' %>
+        <%= image_tag 'user.png', class: 'img-fluid ms-4 rounded', width: '60' %>
       <% end %>
       <div class="d-flex flex-column flex-star ms-3 mt-3">
         <h6 class="text-dark fs-7 font-weight-bold"> <%= link_to f.fullname, user_path(f.id), class: 'text-decoration-none c-letter-sidebar' %> </h6>
