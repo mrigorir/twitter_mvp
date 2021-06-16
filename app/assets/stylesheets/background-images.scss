@@ -1,0 +1,26 @@
+.login-back {
+  background-image: linear-gradient(to bottom right, #1b2a3d, #4e9fdc);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  padding: 80px;
+}
+
+.twitter-image {
+  background-image: image-url('login.jpg');
+  height: 550px;
+}
+
+.tweet-image {
+  background-image: image-url('code.jpg');
+  height: 200px;
+}
+
+.twitter-image,
+.tweet-image {
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: center;
+}
