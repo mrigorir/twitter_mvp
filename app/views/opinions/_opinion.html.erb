@@ -1,0 +1,15 @@
+<div class="d-flex mt-5">
+  <% if opinion.author.avatar.attached? %>
+    <%= image_tag (url_for(opinion.author.avatar)), class: 'img-fluid ms-4 rounded', width: '80' %>
+  <% else %>
+    <%= image_tag 'user.png', class: 'img-fluid ms-4 rounded-circle', width: '80' %>
+  <% end %>
+  <div class="d-flex flex-column flex-star ms-3 mt-3">
+    <h6 class="text-dark fs-6 font-weight-bold">
+      <%= link_to opinion.author.fullname, user_path(opinion.author.id), class: 'text-decoration-none text-dark' %>
+    </h6>
+    <p class="c-feed fs-7">
+      <%= opinion.text %>
+    </p>
+  </div>
+</div>

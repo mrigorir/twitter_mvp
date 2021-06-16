@@ -1,0 +1,30 @@
+@import 'variables.scss';
+
+@media only screen and (max-width: 1024px) {
+  li.nav-item {
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+
+  .divisor {
+    border-bottom: solid 2px $c-nav-items;
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  .edit-profile {
+    margin-top: 0;
+  }
+
+  .center-userdata {
+    justify-content: center;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .sidebar {
+    overflow-y: auto;
+    clear: both;
+  }
+}

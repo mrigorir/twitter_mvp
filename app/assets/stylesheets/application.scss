@@ -1,0 +1,76 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+//general
+
+@import 'variables.scss';
+
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.btn-primary {
+  background-color: $bg-twitter;
+}
+
+div.col-md-12 {
+  padding: 0;
+}
+
+.w-80 {
+  width: 90%;
+}
+
+.sidebar {
+  z-index: 10;
+}
+
+.link-hover .nav-link {
+  color: $c-letter-sidebar;
+}
+
+.boton {
+  justify-self: center;
+  background-color: $bg-twitter !important;
+  border-radius: 0;
+  border: none;
+  width: 80%;
+  margin-top: 10px;
+}
+
+span.input-group-text {
+  background-color: $bg-twitter;
+}
+
+.signup {
+  width: 60%;
+}
+
+nav.nav .nav-link {
+  float: left;
+  display: block;
+  padding: 25px 35px;
+  border-bottom: 3px solid transparent;
+}
+
+nav.nav .nav-link.active {
+  border-bottom: 3px solid #53a7e7;
+}
+
+i.text-muted {
+  cursor: not-allowed;
+}
