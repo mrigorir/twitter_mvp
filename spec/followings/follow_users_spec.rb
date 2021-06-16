@@ -11,7 +11,7 @@ RSpec.describe 'User login the app', type: :feature do
     @user2 = User.find(5)
     Opinion.create(author_id: 1, text: 'tweet1')
     visit login_path
-    fill_in :username, with: 'user'
+    find(:css, '#login_username', visible: false).set 'user'
     click_button 'Login'
     visit home_path
   end
